@@ -16,29 +16,28 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Reward Tracker ##
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > This app is for parents who want to motivate their children.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Parents often want to reward their children for good behavior .  
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Children need visuals to allow them to quantify how close they are to getting a reward or getting out of a punishment.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Data will be persisted and saved so that users can see their information on any device.  Child and parent will have different views.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "Happy wife happy life!"
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Once logged in, a parent can select a number of stars needed to attain a reward (or get out of a punishment).  Parent will be able to add or takeaway stars as needed.  Children will have their own view so they can track their progress.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Before using this app my kids were bad.  Now they are so well-behaved and are always interested in seeing their progress."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Go to website for more details.
