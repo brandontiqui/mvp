@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 	<title></title>
-	<script src="core.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="core.js"></script>
 </head>
-<body>
-public html
-
+<body ng-controller="AppController">
+<ul ng-repeat="child in children track by $index">
+	<li>
+		<span ng-bind="child.name"></span> |
+		<span ng-bind="child.goalReason"></span> |
+		<span ng-bind="child.reward"></span> |
+		<span ng-bind="child.name"></span> |
+		<span ng-bind="child.starsCurrent"></span> |
+		<span ng-bind="child.starsGoal"></span>
+	</li>
+</ul>
 </body>
 </html>
