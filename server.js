@@ -58,7 +58,9 @@ app.get('/api/children/:name', function(req, res) {
 app.post('/cur/inc/:_id', function(req, res) {
 	Child.findOne({ _id: req.params._id}, function (err, child) {
 	  if (err) console.log(err);
-	  child.starsCurrent++;
+	  if (child.starsCurrent < child.starsGoal) {
+		  child.starsCurrent++;
+	  }
 	  child.save();
 	  console.log('post request child id, child found: ', child);
 	  res.send(child);
