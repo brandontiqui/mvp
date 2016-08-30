@@ -10,8 +10,9 @@
 	<li>Name: <span ng-bind="child.name"></span></li>
 	<li>Reason: <span ng-bind="child.goalReason"></span></li>
 	<li>Reward: <span ng-bind="child.reward"></span></li>
-	<li>Stars current: <span ng-bind="child.starsCurrent"></span></li><button>Inc</button><button>Dec</button>
-	<li>Stars goal: <span ng-bind="child.starsGoal"></span></li><button>Inc</button><button>Dec</button>
+	<li>Id: <span ng-bind="child._id"></span></li>
+	<li>Stars current: <span ng-bind="child.starsCurrent"></span></li><button ng-click="raiseCurrent(child._id)">Inc</button><button ng-click="lowerCurrent(child._id)">Dec</button>
+	<li>Stars goal: <span ng-bind="child.starsGoal"></span></li><button ng-click="raiseGoal(child._id)">Inc</button><button ng-click="lowerGoal(child._id)">Dec</button>
 </ul>
 </body>
 </html>
