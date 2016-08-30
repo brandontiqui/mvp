@@ -25,13 +25,13 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 	$scope.form = {};
 
 	$scope.addChild = function() {
-		$scope.form.starsCurrent = 0;
-		$scope.form.starsGoal = 0;
-		console.log($scope.form);
-
-		// need to pass ajax data to node server
-		// var child = new Child($scope.form).save();
-		// console.log('new child:', child);
+		var req = {
+		 method: 'POST',
+		 url: '/add/' + $scope.form.name + '/' + $scope.form.reason + '/' + $scope.form.reward,
+		 data: { test: 'test' }
+		}
+		$http(req);
+		$scope.form = {}; // clear form
 	};
 
 	$scope.getChild = function(name) { 
