@@ -80,6 +80,29 @@ app.post('/cur/dec/:_id', function(req, res) {
 	});
 });
 
+// route to raise goal stars
+app.post('/goal/inc/:_id', function(req, res) {
+	Child.findOne({ _id: req.params._id}, function (err, child) {
+	  if (err) console.log(err);
+	  if (child) {
+		  child.starsGoal++;
+		  child.save();
+	  }
+	  res.send(child);
+	});
+});
+
+// route to lower goal stars
+app.post('/goal/dec/:_id', function(req, res) {
+	Child.findOne({ _id: req.params._id}, function (err, child) {
+	  if (err) console.log(err);
+	  if (child && child.starsGoal > 0 && child.starsGoal > child.starsCurrent) {
+		  child.starsGoal--;
+		  child.save();
+	  }
+	  res.send(child);
+	});
+});
 
 // todo: routes to delete child
 
