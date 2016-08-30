@@ -7,14 +7,11 @@
 </head>
 <body ng-controller="AppController">
 <ul ng-repeat="child in children track by $index">
-	<li>
-		<span ng-bind="child.name"></span> |
-		<span ng-bind="child.goalReason"></span> |
-		<span ng-bind="child.reward"></span> |
-		<span ng-bind="child.name"></span> |
-		<span ng-bind="child.starsCurrent"></span> |
-		<span ng-bind="child.starsGoal"></span>
-	</li>
+	<li>Name: <span ng-bind="child.name"></span></li>
+	<li>Reason: <span ng-bind="child.goalReason"></span></li>
+	<li>Reward: <span ng-bind="child.reward"></span></li>
+	<li>Stars current: <span ng-bind="child.starsCurrent"></span></li><button>Inc</button><button>Dec</button>
+	<li>Stars goal: <span ng-bind="child.starsGoal"></span></li><button>Inc</button><button>Dec</button>
 </ul>
 </body>
 </html>

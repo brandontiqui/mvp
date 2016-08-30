@@ -55,6 +55,15 @@ app.get('/api/children/:name', function(req, res) {
 });
 
 // route to increase/decrease stars
+app.post('/cur/inc/:_id', function(req, res) {
+	Child.findOne({ _id: req.params._id}, function (err, child) {
+	  if (err) console.log(err);
+	  child.starsCurrent++;
+	  child.save();
+	  console.log('post request child id, child found: ', child);
+	  res.send(child);
+	});
+});
 
 // todo: routes to delete child
 
