@@ -52,8 +52,6 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 		};
 
 		$http(req);
-		// var myEl = angular.element( document.querySelector( '#all-info' ) );
-		// myEl.hide(); 
 		$scope.children = [];
 	};
 

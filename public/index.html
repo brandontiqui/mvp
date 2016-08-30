@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-	<title>App</title>
+	<title>Reward Tracker</title>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="core.js"></script>
 </head>
@@ -35,7 +36,7 @@
 			<div ng-if="child.starsCurrent === child.starsGoal">
 				<img src="http://www.lightwing.co/i/2016/08/congratulations-clipart-animated-congratulations-clipart-congratulations-clipart-black-and-white-600x300.jpg">
 			</div>
-			<br>
+			<br><br>
 			<a ng-click="delete(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Delete</a>
 		</ul>
 
