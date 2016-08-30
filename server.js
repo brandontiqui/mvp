@@ -104,7 +104,6 @@ app.post('/goal/dec/:_id', function(req, res) {
 	});
 });
 
-// need to implement
 app.post('/add/:name/:goalReason/:reward', function(req, res) {
 	var child = new Child({ 
 		name: req.params.name,

@@ -31,6 +31,7 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 		 data: { test: 'test' }
 		}
 		$http(req);
+		$scope.getChild($scope.form.name); // use name before clearing
 		$scope.form = {}; // clear form
 	};
 
@@ -47,7 +48,9 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 		console.log('reset');
 		$scope.getChild('chlo');
 	};
-	$scope.getChild('cho'); // <---------hard coded name
+
+	// need initial state
+	$scope.getChild('bo'); // <---------hard coded name // may be causing bug to show hide based on count
 
   // method to increment current count
   $scope.raiseCurrent = function(id) {
@@ -56,7 +59,8 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 	    url: '/cur/inc/' + id 
 	  }).then(function successCallback(response) {
 	  		// get request for child
-	  		$scope.getChild('cho'); // <---------hard coded name
+	  		console.log(response.data.name);
+	  		$scope.getChild(response.data.name);
 	    }, function errorCallback(response) {
 	      console.log('Error getting children: ', response);
 	    });
@@ -68,7 +72,7 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
   	  url: '/cur/dec/' + id 
   	}).then(function successCallback(response) {
   			// get request for child
-  			$scope.getChild('cho'); // <---------hard coded name
+  			$scope.getChild(response.data.name); 
   	  }, function errorCallback(response) {
   	    console.log('Error getting children: ', response);
   	  });
@@ -80,7 +84,7 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
   	  url: '/goal/inc/' + id 
   	}).then(function successCallback(response) {
   			// get request for child
-  			$scope.getChild('cho'); // <---------hard coded name
+  			$scope.getChild(response.data.name); 
   	  }, function errorCallback(response) {
   	    console.log('Error getting children: ', response);
   	  });
@@ -92,7 +96,7 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
   	  url: '/goal/dec/' + id 
   	}).then(function successCallback(response) {
   			// get request for child
-  			$scope.getChild('cho'); // <---------hard coded name
+  			$scope.getChild(response.data.name);
   	  }, function errorCallback(response) {
   	    console.log('Error getting children: ', response);
   	  });
