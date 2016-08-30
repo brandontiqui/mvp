@@ -13,6 +13,9 @@
 	<li>Id: <span ng-bind="child._id"></span></li>
 	<li>Stars current: <span ng-bind="child.starsCurrent"></span></li><button ng-click="raiseCurrent(child._id)">Inc</button><button ng-click="lowerCurrent(child._id)">Dec</button>
 	<li>Stars goal: <span ng-bind="child.starsGoal"></span></li><button ng-click="raiseGoal(child._id)">Inc</button><button ng-click="lowerGoal(child._id)">Dec</button>
+	<div ng-if="child.starsCurrent === child.starsGoal">
+		<img src="http://www.lightwing.co/i/2016/08/congratulations-clipart-animated-congratulations-clipart-congratulations-clipart-black-and-white-600x300.jpg">
+	</div>
 </ul>
 </body>
 </html>

@@ -9,7 +9,8 @@ var childSchema = new Schema({
   goalReason: String,
   reward: String,
   starsCurrent: Number,
-  starsGoal: Number
+  starsGoal: Number,
+  image: String
 });
 
 var Child = mongoose.model('Child', childSchema);
@@ -21,7 +22,8 @@ var Child = mongoose.model('Child', childSchema);
 //   goalReason: 'Get out of being grounded.',
 //   reward: 'Can play outside.',
 //   starsCurrent: 8,
-//   starsGoal: 10
+//   starsGoal: 10,
+//   image: 'http://www.lightwing.co/i/2016/08/congratulations-clipart-animated-congratulations-clipart-congratulations-clipart-black-and-white-600x300.jpg'
 // }).save();
 
 
