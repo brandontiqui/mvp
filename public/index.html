@@ -19,7 +19,7 @@
 			</form>
 		</div>
 
-		<ul ng-repeat="child in children track by $index">
+		<ul ng-repeat="child in children track by $index" id="all-info">
 			<li>Name: <span ng-bind="child.name"></span></li>
 			<li>Reason: <span ng-bind="child.goalReason"></span></li>
 			<li>Reward: <span ng-bind="child.reward"></span></li>

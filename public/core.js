@@ -52,13 +52,14 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 		};
 
 		$http(req);
-
+		// var myEl = angular.element( document.querySelector( '#all-info' ) );
+		// myEl.hide(); 
+		$scope.children = [];
 	};
 
 	// need initial state
-	// $scope.getChild('bo'); // <---------hard coded name // may be causing bug to show hide based on count
 
-	
+
 
   // method to increment current count
   $scope.raiseCurrent = function(id) {
