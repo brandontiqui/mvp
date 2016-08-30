@@ -115,6 +115,15 @@ app.post('/add/:name/:goalReason/:reward', function(req, res) {
 	res.send(req.params.name + ' ' + req.params.goalReason + ' ' + req.params.reward);
 });
 
+// route to delete
+app.delete('/delete/:_id', function (req, res) {
+  Child.remove({ _id: req.params._id}, function (err) {
+	  if (err) console.log(err);
+	  // removed!
+	  res.send(req.params._id + ' removed');
+	});
+});
+
 // todo: routes to delete child
 
 var port = 3000;

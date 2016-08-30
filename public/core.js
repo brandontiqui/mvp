@@ -44,9 +44,9 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 			});
 	};
 
-	$scope.resetCount = function() {
-		console.log('reset');
-		$scope.getChild('chlo');
+	$scope.delete = function() {
+		console.log('delete');
+		// $scope.getChild('chlo');
 	};
 
 	// need initial state
