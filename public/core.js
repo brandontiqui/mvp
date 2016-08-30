@@ -44,11 +44,16 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 			});
 	};
 
-	$scope.delete = function() {
+	$scope.delete = function(id) {
 		console.log('delete');
-		// $scope.getChild('chlo');
-	};
+		var req = {
+		  method: 'DELETE',
+		  url: '/delete/' + id,
+		};
 
+		$http(req);
+	};
+	
 	// need initial state
 	$scope.getChild('bo'); // <---------hard coded name // may be causing bug to show hide based on count
 
