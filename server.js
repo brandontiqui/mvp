@@ -58,10 +58,10 @@ app.get('/api/children/:name', function(req, res) {
 app.post('/cur/inc/:_id', function(req, res) {
 	Child.findOne({ _id: req.params._id}, function (err, child) {
 	  if (err) console.log(err);
-	  if (child.starsCurrent < child.starsGoal) {
+	  if (child && child.starsCurrent < child.starsGoal) {
 		  child.starsCurrent++;
+		  child.save();
 	  }
-	  child.save();
 	  console.log('post request child id, child found: ', child);
 	  res.send(child);
 	});
@@ -71,10 +71,10 @@ app.post('/cur/inc/:_id', function(req, res) {
 app.post('/cur/dec/:_id', function(req, res) {
 	Child.findOne({ _id: req.params._id}, function (err, child) {
 	  if (err) console.log(err);
-	  if (child.starsCurrent > 0) {
+	  if (child && child.starsCurrent > 0) {
 		  child.starsCurrent--;
+		  child.save();
 	  }
-	  child.save();
 	  console.log('post request child id, child found: ', child);
 	  res.send(child);
 	});
