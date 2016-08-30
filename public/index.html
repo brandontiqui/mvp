@@ -5,8 +5,8 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="core.js"></script>
 </head>
-<body ng-controller="AppController">
-<ul ng-repeat="child in children track by $index">
+<body ng-controller="AppController"> {{count}}
+<ul ng-repeat="child in children track by $index" ng-if="count > 0">
 	<li>Name: <span ng-bind="child.name"></span></li>
 	<li>Reason: <span ng-bind="child.goalReason"></span></li>
 	<li>Reward: <span ng-bind="child.reward"></span></li>
@@ -16,6 +16,16 @@
 	<div ng-if="child.starsCurrent === child.starsGoal">
 		<img src="http://www.lightwing.co/i/2016/08/congratulations-clipart-animated-congratulations-clipart-congratulations-clipart-black-and-white-600x300.jpg">
 	</div>
+	<button ng-click="resetCount()">Delete</button>
 </ul>
+
+	<div ng-if="count === 1">
+		<form>
+		<button ng-click="addChild()">Add</button>
+			Name: <input type="text" name="name" ng-model="form.name">
+			Reason: <input type="text" name="reason" ng-model="form.goalReason">
+			Reward: <input type="text" name="reward" ng-model="form.reward">
+		</form>
+	</div>
 </body>
 </html>

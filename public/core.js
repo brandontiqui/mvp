@@ -2,6 +2,7 @@
 shows all children
 **/
 
+
 var myApp = angular.module('myApp',[]);
 
 myApp.factory('myFactory', ['$http', function($http) {
@@ -20,15 +21,32 @@ myApp.factory('myFactory', ['$http', function($http) {
 myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($scope, $http, myFactory) {
 	$scope.name = '';
 	$scope.children = [];
+	$scope.count = $scope.children.length;
+	$scope.form = {};
+
+	$scope.addChild = function() {
+		$scope.form.starsCurrent = 0;
+		$scope.form.starsGoal = 0;
+		console.log($scope.form);
+
+		// need to pass ajax data to node server
+		// var child = new Child($scope.form).save();
+		// console.log('new child:', child);
+	};
 
 	$scope.getChild = function(name) { 
 		myFactory.getChild(name)
 			.then(function success(response) {
 				$scope.children = []; // clear
 				$scope.children.push(response.data);
+				$scope.count = $scope.children.length;
 			});
 	};
 
+	$scope.resetCount = function() {
+		console.log('reset');
+		$scope.getChild('chlo');
+	};
 	$scope.getChild('cho'); // <---------hard coded name
 
   // method to increment current count

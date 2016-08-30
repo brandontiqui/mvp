@@ -9,8 +9,7 @@ var childSchema = new Schema({
   goalReason: String,
   reward: String,
   starsCurrent: Number,
-  starsGoal: Number,
-  image: String
+  starsGoal: Number
 });
 
 var Child = mongoose.model('Child', childSchema);
@@ -22,8 +21,7 @@ var Child = mongoose.model('Child', childSchema);
 //   goalReason: 'Get out of being grounded.',
 //   reward: 'Can play outside.',
 //   starsCurrent: 8,
-//   starsGoal: 10,
-//   image: 'http://www.lightwing.co/i/2016/08/congratulations-clipart-animated-congratulations-clipart-congratulations-clipart-black-and-white-600x300.jpg'
+//   starsGoal: 10
 // }).save();
 
 
@@ -106,8 +104,23 @@ app.post('/goal/dec/:_id', function(req, res) {
 	});
 });
 
+// need to implement
+app.post('/:name/:goalReason/:reward', function(req, res) {
+	var child = new Child({ 
+		name: req.params.name,
+	  goalReason: req.params.goalReason,
+	  reward: req.params.reward,
+	  starsCurrent: 0,
+	  starsGoal: 10
+	}).save();
+	res.send(req.params.name + ' ' + req.params.goalReason + ' ' + req.params.reward);
+});
+
 // todo: routes to delete child
 
 var port = 3000;
 app.listen(port);
 console.log('Server started on port:', port);
+
+
+module.exports = Child;
