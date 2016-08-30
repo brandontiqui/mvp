@@ -52,10 +52,13 @@ myApp.controller('AppController', ['$scope', '$http', 'myFactory', function($sco
 		};
 
 		$http(req);
+
 	};
-	
+
 	// need initial state
-	$scope.getChild('bo'); // <---------hard coded name // may be causing bug to show hide based on count
+	// $scope.getChild('bo'); // <---------hard coded name // may be causing bug to show hide based on count
+
+	
 
   // method to increment current count
   $scope.raiseCurrent = function(id) {

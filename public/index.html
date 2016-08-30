@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-	<title></title>
+	<title>App</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="core.js"></script>
 </head>
-<body ng-controller="AppController"> {{count}}
-<ul ng-repeat="child in children track by $index" ng-if="count > 0">
-	<li>Name: <span ng-bind="child.name"></span></li>
-	<li>Reason: <span ng-bind="child.goalReason"></span></li>
-	<li>Reward: <span ng-bind="child.reward"></span></li>
-	<li>Id: <span ng-bind="child._id"></span></li>
-	<li>Stars current: <span ng-bind="child.starsCurrent"></span></li><button ng-click="raiseCurrent(child._id)">Inc</button><button ng-click="lowerCurrent(child._id)">Dec</button>
-	<li>Stars goal: <span ng-bind="child.starsGoal"></span></li><button ng-click="raiseGoal(child._id)">Inc</button><button ng-click="lowerGoal(child._id)">Dec</button>
-	<div ng-if="child.starsCurrent === child.starsGoal">
-		<img src="http://www.lightwing.co/i/2016/08/congratulations-clipart-animated-congratulations-clipart-congratulations-clipart-black-and-white-600x300.jpg">
-	</div>
-	<button ng-click="delete(child._id)">Delete</button>
-</ul>
+<body ng-controller="AppController">
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Reward Tracker</h1>
+			<form>
+			<a ng-click="addChild()" class="btn btn-primary btn-lg" href="#" role="button">Add</a>
+			<!-- <button ng-click="addChild()" lass="btn btn-primary btn-lg">Add</button> -->
+				Name: <input type="text" name="name" ng-model="form.name">
+				Reason: <input type="text" name="reason" ng-model="form.reason">
+				Reward: <input type="text" name="reward" ng-model="form.reward">
+			</form>
+		</div>
 
-	<div ng-if="count === 1">
-		<form>
-		<button ng-click="addChild()">Add</button>
-			Name: <input type="text" name="name" ng-model="form.name">
-			Reason: <input type="text" name="reason" ng-model="form.reason">
-			Reward: <input type="text" name="reward" ng-model="form.reward">
-		</form>
+		<ul ng-repeat="child in children track by $index">
+			<li>Name: <span ng-bind="child.name"></span></li>
+			<li>Reason: <span ng-bind="child.goalReason"></span></li>
+			<li>Reward: <span ng-bind="child.reward"></span></li>
+			<li>Stars current: <span ng-bind="child.starsCurrent"></span></li>
+
+			<a ng-click="raiseCurrent(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Inc</a>
+			<a ng-click="lowerCurrent(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Dec</a>
+
+			<li>Stars goal: <span ng-bind="child.starsGoal"></span></li>
+
+			<a ng-click="raiseGoal(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Inc</a>
+			<a ng-click="lowerGoal(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Dec</a>
+			<div ng-if="child.starsCurrent === child.starsGoal">
+				<img src="http://www.lightwing.co/i/2016/08/congratulations-clipart-animated-congratulations-clipart-congratulations-clipart-black-and-white-600x300.jpg">
+			</div>
+			<br>
+			<a ng-click="delete(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Delete</a>
+		</ul>
+
+
 	</div>
 </body>
 </html>
