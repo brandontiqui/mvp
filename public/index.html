@@ -24,12 +24,12 @@
 			<li>Name: <span ng-bind="child.name"></span></li>
 			<li>Reason: <span ng-bind="child.goalReason"></span></li>
 			<li>Reward: <span ng-bind="child.reward"></span></li>
-			<li><h1>Stars (current): <span ng-bind="child.starsCurrent" class="label label-info"></span></li></h1>
+			<li><h1>Stars (current): <span ng-bind="child.starsCurrent" class="label label-info glyphicon glyphicon-star"></span></li></h1>
 
 			<a ng-click="raiseCurrent(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Inc</a>
 			<a ng-click="lowerCurrent(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Dec</a>
 
-			<li><h1>Stars (goal): <span ng-bind="child.starsGoal" class="label label-info"></span></li></h1>
+			<li><h1>Stars (goal): <span ng-bind="child.starsGoal" class="label label-info glyphicon glyphicon-star"></span></li></h1>
 
 			<a ng-click="raiseGoal(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Inc</a>
 			<a ng-click="lowerGoal(child._id)" class="btn btn-primary btn-lg" href="#" role="button">Dec</a>
